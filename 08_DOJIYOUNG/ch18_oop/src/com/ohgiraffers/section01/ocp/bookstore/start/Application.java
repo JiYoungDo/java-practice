@@ -23,5 +23,10 @@ public class Application {
         System.out.println("[주문 3] 박서연");
         Customer park = new Customer("박서연", "NORMAL");
         orderService.placeOrder(park, testBook, 1);
+
+
+        System.out.println("[주문 4] 최민준");
+        Customer choi = new Customer("최민준", "STUDENT");
+        orderService.placeOrder(choi, javaBook, 1);
     }
 }

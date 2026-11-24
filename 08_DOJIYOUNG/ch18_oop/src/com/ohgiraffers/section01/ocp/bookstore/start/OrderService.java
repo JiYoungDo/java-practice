@@ -31,9 +31,11 @@ public class OrderService {
         // 어느 분기에도 맞지 않는 등급은 else로 가서 할인 금액이 0이 된다.
         if (customer.getGrade().equals("VIP")) {
             return amount * 10 / 100;
-        } else if (customer.getGrade().equals("GOLD")) {
+        }else if (customer.getGrade().equals("GOLD")) {
             return amount * 5 / 100;
-        } else {
+        }else if (customer.getGrade().equals("STUDENT")) {
+            return amount * 15 / 100;
+        }else {
             return 0;
         }
     }
