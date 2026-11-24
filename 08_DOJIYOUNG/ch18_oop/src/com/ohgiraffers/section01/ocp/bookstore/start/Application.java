@@ -13,20 +13,20 @@ public class Application {
         OrderService orderService = new OrderService();
 
         System.out.println("[주문 1] 김하늘");
-        Customer kim = new Customer("김하늘", "VIP");
+        Customer kim = new Customer("김하늘", new VipDiscount());
         orderService.placeOrder(kim, javaBook, 2);
 
         System.out.println("[주문 2] 이준호");
-        Customer lee = new Customer("이준호", "GOLD");
+        Customer lee = new Customer("이준호", new GoldDiscount());
         orderService.placeOrder(lee, algorithmBook, 1);
 
         System.out.println("[주문 3] 박서연");
-        Customer park = new Customer("박서연", "NORMAL");
+        Customer park = new Customer("박서연", new NoDiscount());
         orderService.placeOrder(park, testBook, 1);
 
 
-        System.out.println("[주문 4] 최민준");
-        Customer choi = new Customer("최민준", "STUDENT");
-        orderService.placeOrder(choi, javaBook, 1);
+//        System.out.println("[주문 4] 최민준");
+//        Customer choi = new Customer("최민준", "STUDENT");
+//        orderService.placeOrder(choi, javaBook, 1);
     }
 }

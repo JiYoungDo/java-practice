@@ -11,7 +11,10 @@ public class OrderService {
     public void placeOrder(Customer customer, Book book, int quantity) {
 
         int amount = book.getPrice() * quantity;
-        int discount = calculateDiscount(customer, amount);
+        // int discount = calculateDiscount(customer, amount);
+
+        DiscountPolicy discountPolicy = customer.getDiscountPolicy();
+        int discount = discountPolicy.discount(amount);
         int afterDiscount = amount - discount;
 
         int shippingFee = 3000;
@@ -25,18 +28,18 @@ public class OrderService {
         System.out.println("주문 결과: 완료");
     }
 
-    public int calculateDiscount(Customer customer, int amount) {
-
-        // 등급 글자를 if로 비교해 할인 금액을 정한다.
-        // 어느 분기에도 맞지 않는 등급은 else로 가서 할인 금액이 0이 된다.
-        if (customer.getGrade().equals("VIP")) {
-            return amount * 10 / 100;
-        }else if (customer.getGrade().equals("GOLD")) {
-            return amount * 5 / 100;
-        }else if (customer.getGrade().equals("STUDENT")) {
-            return amount * 15 / 100;
-        }else {
-            return 0;
-        }
-    }
+//    public int calculateDiscount(Customer customer, int amount) {
+//
+//        // 등급 글자를 if로 비교해 할인 금액을 정한다.
+//        // 어느 분기에도 맞지 않는 등급은 else로 가서 할인 금액이 0이 된다.
+//        if (customer.getGrade().equals("VIP")) {
+//            return amount * 10 / 100;
+//        }else if (customer.getGrade().equals("GOLD")) {
+//            return amount * 5 / 100;
+//        }else if (customer.getGrade().equals("STUDENT")) {
+//            return amount * 15 / 100;
+//        }else {
+//            return 0;
+//        }
+//    }
 }

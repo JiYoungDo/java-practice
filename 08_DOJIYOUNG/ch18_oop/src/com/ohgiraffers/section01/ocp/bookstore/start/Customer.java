@@ -8,10 +8,15 @@ public class Customer {
 
     private String name;
     private String grade;
+    private DiscountPolicy discountPolicy;
 
-    public Customer(String name, String grade) {
+    public Customer(String name, DiscountPolicy discountPolicy) {
         this.name = name;
-        this.grade = grade;
+        this.discountPolicy = discountPolicy;
+    }
+
+    public DiscountPolicy getDiscountPolicy(){
+        return discountPolicy;
     }
 
     public String getName() {
