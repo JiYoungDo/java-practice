@@ -25,8 +25,8 @@ public class Application {
         orderService.placeOrder(park, testBook, 1);
 
 
-//        System.out.println("[주문 4] 최민준");
-//        Customer choi = new Customer("최민준", "STUDENT");
-//        orderService.placeOrder(choi, javaBook, 1);
+        System.out.println("[주문 4] 최민준");
+        Customer choi = new Customer("최민준", new StudentDiscount());
+        orderService.placeOrder(choi, javaBook, 1);
     }
 }
