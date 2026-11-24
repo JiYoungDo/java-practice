@@ -19,6 +19,7 @@ public class Application {
         List<Shape> shapes = new ArrayList<>();
         shapes.add(new Rectangle(4, 5));
         shapes.add(new Triangle(6, 4));
+        shapes.add(new Square(10));
 
         /*
          * 합계 변수는 반복 앞에 둔다.
