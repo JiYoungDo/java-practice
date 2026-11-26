@@ -9,8 +9,8 @@ public class Team {
     }
 
     public void score(int point) {
-        // TODO 단계 3: Team과 Application의 OldScoreBoard.getInstance()를 ScoreBoard.INSTANCE로 바꾼다
-        OldScoreBoard.getInstance().add(point);
+
+        ScoreBoard.INSTANCE.add(point);
         System.out.println(name + " " + point + "점");
     }
 }
