@@ -4,7 +4,7 @@ package com.ohgiraffers.section04.singleton.basic.subwaymap.start;
 public class SubwayMap {
 
     // TODO 단계 3: 쓰지 않게 된 instance 필드를 지운다
-    private static SubwayMap instance = new SubwayMap();
+    // private static SubwayMap instance = new SubwayMap();
 
     private SubwayMap() {
         System.out.println("노선도 불러오는 중");
@@ -16,9 +16,13 @@ public class SubwayMap {
     }
 
     // TODO 단계 1: getInstance() 위에 SubwayMap 객체 하나를 담는 static 중첩 클래스 Holder를 만든다
+    private static class Holder {
+        private static final SubwayMap INSTANCE = new SubwayMap();
+    }
+
     // TODO 단계 2: getInstance()가 Holder.INSTANCE를 돌려주게 바꾼다
     public static SubwayMap getInstance() {
-        return instance;
+        return Holder.INSTANCE;
     }
 
     public String lineOf(String station) {
