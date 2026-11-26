@@ -11,12 +11,13 @@ public class Playlist {
     private List<String> songs = new ArrayList<>();
 
     // TODO 단계 1: 다른 클래스에서 new 하지 못하게 생성자를 private으로 바꾼다
-    public Playlist() {
+    private Playlist() {
     }
 
     // TODO 단계 3: 부를 때마다 새 객체를 만들지 않고 instance를 돌려주게 바꾼다
     public static Playlist getInstance() {
-        return new Playlist();
+        return instance;
+        //return new Playlist();
     }
 
     public void add(String song) {

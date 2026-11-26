@@ -9,7 +9,7 @@ public class Application {
         home.add("봄노래");
 
         // TODO 단계 2: 아래 줄의 new Playlist()를 Playlist.getInstance()로 바꾼다
-        Playlist search = new Playlist();
+        Playlist search = Playlist.getInstance();
         search.add("여름노래");
 
         Playlist current = Playlist.getInstance();
