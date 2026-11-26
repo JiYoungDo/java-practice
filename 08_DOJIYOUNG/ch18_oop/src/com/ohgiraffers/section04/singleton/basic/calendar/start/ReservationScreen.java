@@ -4,7 +4,7 @@ public class ReservationScreen {
 
     public void check(String date) {
         // TODO 단계 2: ReservationScreen과 DeliveryScreen의 new HolidayCalendar()를 HolidayCalendar.getInstance()로 바꾼다
-        HolidayCalendar calendar = new HolidayCalendar();
+        HolidayCalendar calendar = HolidayCalendar.getInstance();
         if (calendar.isHoliday(date)) {
             System.out.println("예약 " + date + ": 쉬는 날");
         } else {
