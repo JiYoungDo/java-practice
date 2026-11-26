@@ -13,6 +13,6 @@ public class Application {
         System.out.println("같은 객체인가: " + (home.getSettings() == setting.getSettings()));
 
         // TODO 단계 4: 아래 주석을 풀어 컴파일 오류를 확인하고 다시 주석으로 되돌린다
-        // AppSettings other = new AppSettings();
+        //AppSettings other = new AppSettings();
     }
 }
