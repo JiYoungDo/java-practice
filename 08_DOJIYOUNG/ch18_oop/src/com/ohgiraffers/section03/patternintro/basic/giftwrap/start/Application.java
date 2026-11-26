@@ -15,15 +15,19 @@ public class Application {
         // TODO 단계 2: 「기본 포장」, 1000원을 돌려주는 BasicWrap을 만든다
         // TODO 단계 3: 「고급 포장」, 3000원을 돌려주는 PremiumWrap을 만든다
         // TODO 단계 4: 아래 코드를 List<Wrap>에 BasicWrap·PremiumWrap을 담아 반복 한 번으로 출력하는 코드로 바꾼다
-        GiftWrap giftWrap = new GiftWrap();
-        WrapLabel wrapLabel = new WrapLabel();
+        //GiftWrap giftWrap = new GiftWrap();
+        //WrapLabel wrapLabel = new WrapLabel();
+        List<Wrap> wraps = new ArrayList<>();
+        wraps.add(new BasicWrap());
+        wraps.add(new PremiunWrap());
+        wraps.add(new BoxWrap());
 
-        List<String> types = new ArrayList<>();
-        types.add("BASIC");
-        types.add("PREMIUM");
+        //List<String> types = new ArrayList<>();
+        //types.add("BASIC");
+        //types.add("PREMIUM");
 
-        for (String type : types) {
-            System.out.println(wrapLabel.label(type) + ": " + giftWrap.fee(type) + "원");
+        for (Wrap wrap : wraps){
+            System.out.println(wrap.label() + ": " + wrap.fee() + "원");
         }
     }
 }
