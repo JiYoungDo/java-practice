@@ -19,7 +19,7 @@ public class TokenIssuer {
     }
 
     // TODO 단계 2: 메소드 선언의 static 뒤에 synchronized를 넣는다
-    public static TokenIssuer getInstance() {
+    public static synchronized TokenIssuer getInstance() {
         if (instance == null) {
             instance = new TokenIssuer();
         }
@@ -27,7 +27,7 @@ public class TokenIssuer {
     }
 
     // TODO 단계 3: 메소드 선언의 public 뒤에 synchronized를 넣는다
-    public void next() {
+    public synchronized void  next() {
         issued = issued + 1;
     }
 
